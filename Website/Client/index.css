@@ -28,7 +28,7 @@ html {
 }
 
 .main-container {
-  width: 50%;
+  width: 70%;
   padding: 2rem 1rem 2rem 1rem;
   display: flex;
   flex-direction: column;
@@ -71,8 +71,8 @@ html {
 }
 
 .right-content img {
-  width: 400px;
-  height: 400px;
+  width: 600px;
+  height: width;
   border: 1px solid #1b1717;
   margin: 0.25rem;
 }
@@ -122,6 +122,7 @@ html {
 }
 
 .game-video {
+  margin: 0 0.25rem 0.75rem 0.25rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -134,4 +135,43 @@ html {
 iframe {
   width: 100%;
   height: 500px;
+}
+
+@media only screen and (max-width: 1440px) {
+  .right-content img {
+    width: 350px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .right-content img {
+    width: 225px;
+  }
+  iframe {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .right-content {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .title-logo {
+    font-size: 1.5rem;
+    color: #630000;
+  }
+
+  .company-logo {
+    font-size: 0.75rem;
+    color: #810000;
+  }
+
+  iframe {
+    width: 100%;
+    height: 200px;
+  }
 }
