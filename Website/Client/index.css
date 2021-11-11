@@ -120,3 +120,18 @@ html {
   transform: translateY(-1px);
   color: #eeebdd;
 }
+
+.game-video {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.game-video iframe {
+  margin: auto;
+}
+
+iframe {
+  width: 100%;
+  height: 500px;
+}
