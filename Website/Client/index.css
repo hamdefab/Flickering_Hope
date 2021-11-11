@@ -134,12 +134,16 @@ html {
 
 iframe {
   width: 100%;
-  height: 500px;
+  height: 700px;
 }
 
 @media only screen and (max-width: 1440px) {
   .right-content img {
     width: 350px;
+  }
+  iframe {
+    width: 100%;
+    height: 400px;
   }
 }
 
