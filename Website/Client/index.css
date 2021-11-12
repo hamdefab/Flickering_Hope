@@ -285,16 +285,26 @@ ul {
 }
 
 img {
-  width: 300px;
+  width: 500px;
   height: width;
   border: 1px solid #1b1717;
   margin: 0.25rem;
+}
+
+.left-item span .images {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media only screen and (max-width: 1440px) {
   .main-container {
     width: 60%;
     padding: 10px;
+  }
+  img {
+    width: 350px;
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -350,7 +360,11 @@ img {
     font-size: 1.75rem;
   }
 }
-
+@media only screen and (max-width: 768px) {
+  img {
+    width: 250px;
+  }
+}
 @media only screen and (max-width: 425px) {
   .main-container {
     width: 100%;
