@@ -1,168 +1,8 @@
 /* https://colorhunt.co/palette/eeebddd8b6a4630000000000 */
 /* https://colorhunt.co/palette/eeebdd8100006300001b1717 */
 /* https://mycolor.space/gradient?ori=circle&hex=%2346484C&hex2=%23250A0A&sub=1 */
-/* * {
-  margin: 0;
-  padding: 0;
-  font-family: "Mochiy Pop P One", sans-serif;
-}
-
-body,
-html {
-  height: auto;
-  margin: 0px auto;
-}
-
-.wrapper {
-  display: flex;
-  justify-content: center;
-  background-image: radial-gradient(
-    circle,
-    #46484c,
-    #3a3941,
-    #332933,
-    #2d1a22,
-    #250a0a
-  );
-  height: 100%;
-}
-
-.main-container {
-  width: 70%;
-  padding: 2rem 1rem 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #eeebdd;
-}
-
-.logo {
-  width: 100%;
-  text-align: center;
-  padding: 0.5rem 0 0.5rem 0;
-}
-
-.title-logo {
-  font-size: 2.5rem;
-  color: #630000;
-}
-
-.company-logo {
-  font-size: 1.15rem;
-  color: #810000;
-}
-
-.main-content {
-  width: 100%;
-  height: inherit;
-  display: flex;
-  flex-direction: row;
-}
-
-.right-content {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-.right-content p {
-  color: #810000;
-  font-size: 1.15rem;
-}
-
-.right-content img {
-  width: 600px;
-  height: width;
-  border: 1px solid #1b1717;
-  margin: 0.25rem;
-}
-
-.left-content {
-  display: flex;
-  flex-direction: column;
-}
-
-.left-item {
-  margin: 0.75rem 0.25rem 0.75rem 0.25rem;
-}
-
-.left-item p {
-  color: #810000;
-  font-size: 1.15rem;
-  text-align: center;
-}
-
-.credit ul {
-  list-style-position: inside;
-}
-
-.play {
-  text-align: center;
-}
-
-.play button {
-  background-image: radial-gradient(
-    circle,
-    #46484c,
-    #3a3941,
-    #332933,
-    #2d1a22,
-    #250a0a
-  );
-  color: #d8b6a4;
-  position: relative;
-  width: 50%;
-  height: 3rem;
-  border-radius: 50px;
-}
-
-.play button:hover {
-  transform: translateY(-1px);
-  color: #eeebdd;
-}
-
-.game-video {
-  margin: 0 0.25rem 0.75rem 0.25rem;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.game-video iframe {
-  margin: auto;
-}
-
-iframe {
-  width: 100%;
-  height: 700px;
-}
-
-@media only screen and (max-width: 1440px) {
-  .right-content img {
-    width: 350px;
-  }
-  iframe {
-    width: 100%;
-    height: 400px;
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  .right-content img {
-    width: 225px;
-  }
-  iframe {
-    width: 100%;
-    height: 300px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .right-content {
-    display: none;
-  }
-}
-*/
+/* https://colorhunt.co/palette/89b5af96c7c1ded9c4d0cab2 */
+/* https://css-tricks.com/almanac/properties/b/backdrop-filter/ */
 
 * {
   margin: 0;
@@ -179,15 +19,12 @@ html {
 .wrapper {
   display: flex;
   justify-content: center;
-  background-image: radial-gradient(
-    circle,
-    #1c0d16,
-    #180a11,
-    #12060c,
-    #0a0305,
-    #000000
-  );
   height: 100%;
+  background: url(./res/grassy-plane-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .main-container {
@@ -196,7 +33,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #eeebdd;
+  /* background-color: #eeebdd; */
   justify-content: center;
 }
 
@@ -205,16 +42,18 @@ html {
   text-align: center;
   padding: 0.5rem 0 0.5rem 0;
   font-family: "Mochiy Pop P One", sans-serif;
+  transition: transform;
 }
 
 .title-logo {
   font-size: 4rem;
-  color: #630000;
+  color: #11324d;
+  /* filter: drop-shadow(0 0 1rem crimson); */
 }
 
 .company-logo {
   font-size: 3.25rem;
-  color: #810000;
+  color: #515e63;
 }
 
 .game-video {
@@ -257,7 +96,7 @@ ul {
 }
 
 .left-item {
-  background-color: #d8b6a4;
+  backdrop-filter: blur(70px) opacity(1) brightness(1.15);
   margin: 2.5rem 2rem 2.5rem 2rem;
   border-radius: 20px;
 }
@@ -265,7 +104,8 @@ ul {
 .left-item > span > p {
   font-size: 1.5rem;
   font-weight: bolder;
-  color: #810000;
+  color: #11324d;
+  /* filter: drop-shadow(0 0 1rem crimson); */
   text-align: center;
 }
 
@@ -281,6 +121,7 @@ ul {
 .left-item > span > span {
   /* text-align: center; */
   font-size: 1.75rem;
+  color: #142f43;
   font-family: "Source Sans Pro", sans-serif;
 }
 
