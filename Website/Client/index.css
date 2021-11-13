@@ -42,7 +42,6 @@ html {
   text-align: center;
   padding: 0.5rem 0 0.5rem 0;
   font-family: "Mochiy Pop P One", sans-serif;
-  transition: transform;
 }
 
 .title-logo {
@@ -85,10 +84,13 @@ html {
   height: 5rem;
   border-radius: 50px;
   font-size: 2rem;
+  transition: 0.3s;
 }
 
 .game-video button:hover {
   transform: translateY(-1px);
+  transition: 0.3s;
+  color: #d8b6a4;
 }
 ul {
   display: table;
@@ -137,6 +139,10 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.footer p {
+  font-size: 1.45rem;
 }
 
 @media only screen and (max-width: 1440px) {
