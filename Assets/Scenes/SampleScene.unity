@@ -675,7 +675,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 2
       m_TileObjectToInstantiateIndex: 65535
@@ -1595,7 +1595,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 7
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 2
       m_TileObjectToInstantiateIndex: 65535
@@ -1835,7 +1835,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 2
       m_TileObjectToInstantiateIndex: 65535
@@ -2005,7 +2005,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 2
       m_TileObjectToInstantiateIndex: 65535
@@ -2028,20 +2028,20 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: 21300000, guid: a0981405a75fe3344b9f2665fb19c85d, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: f4d574c587996854b81d4f7d5fe56429, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 6070072f72bad8a45a5e671887f79744, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: acd774679454cd04c8293bdcd66a7af3, type: 3}
   - m_RefCount: 19
     m_Data: {fileID: 21300000, guid: b213b4da30c5d544fad7b9530cfe120c, type: 3}
   - m_RefCount: 11
     m_Data: {fileID: 21300000, guid: e8d928677a9f2d74396875d2a9b8bbb2, type: 3}
-  - m_RefCount: 2
-    m_Data: {fileID: 21300000, guid: bfb47fb4099cc4145a45405ad70d8f55, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: acd774679454cd04c8293bdcd66a7af3, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 2c7a8e04982cb1c458793da8d33230fa, type: 3}
   - m_RefCount: 12
