@@ -6,18 +6,20 @@ using UnityEngine.InputSystem;
 public class MovementScript : MonoBehaviour
 {
     [SerializeField] private float runSpeed = 10f;
-    [SerializeField] private float jumpSpeed = 20f;
+    [SerializeField] private float jumpSpeed = 25f;
 
     Vector2 moveInput;
     Rigidbody2D myRididbody;
     Animator myAnimator;
-    CapsuleCollider2D myCapsuleCollider;
+    CapsuleCollider2D myBodyCollider;
+    BoxCollider2D myFeetCollider;
 
     void Start()
     {
         myRididbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
-        myCapsuleCollider = GetComponent<CapsuleCollider2D>();
+        myBodyCollider = GetComponent<CapsuleCollider2D>();
+        myFeetCollider = GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -34,7 +36,7 @@ public class MovementScript : MonoBehaviour
 
     void OnJump(InputValue value) 
     {
-        if (!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) 
+        if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) 
         {
             return;
         }
@@ -54,7 +56,7 @@ public class MovementScript : MonoBehaviour
 
     void Jump()
     {
-        myAnimator.SetBool("isJumping", !myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ground")));
+        myAnimator.SetBool("isJumping", !myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")));
     }
 
     void FlipSprite()
