@@ -1,0 +1,315 @@
+/* https://colorhunt.co/palette/eeebddd8b6a4630000000000 */
+/* https://colorhunt.co/palette/eeebdd8100006300001b1717 */
+/* https://mycolor.space/gradient?ori=circle&hex=%2346484C&hex2=%23250A0A&sub=1 */
+/* https://colorhunt.co/palette/89b5af96c7c1ded9c4d0cab2 */
+/* https://css-tricks.com/almanac/properties/b/backdrop-filter/ */
+
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: "Mochiy Pop P One", sans-serif; */
+}
+
+body,
+html {
+  background-size: contain;
+  margin: 0px auto;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  background: url(./res/grassy-plane-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.main-container {
+  width: 45%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: #eeebdd; */
+  justify-content: center;
+}
+
+.logo {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0 0.5rem 0;
+  font-family: "Mochiy Pop P One", sans-serif;
+}
+
+.title-logo {
+  font-size: 4rem;
+  color: #11324d;
+  /* filter: drop-shadow(0 0 1rem crimson); */
+}
+
+.company-logo {
+  font-size: 3.25rem;
+  color: #515e63;
+}
+
+.game-video {
+  text-align: center;
+}
+
+.game-video iframe {
+  padding-top: 50px;
+  width: 80%;
+  height: 700px;
+}
+
+.game-video p {
+  padding: 20px;
+}
+
+.game-video p button {
+  background-image: radial-gradient(
+    circle,
+    #46484c,
+    #3a3941,
+    #332933,
+    #2d1a22,
+    #250a0a
+  );
+  color: #eeebdd;
+  position: relative;
+  width: 70%;
+  height: 5rem;
+  border-radius: 50px;
+  font-size: 2rem;
+  transition: 0.3s;
+}
+
+.game-video button:hover {
+  transform: translateY(-1px);
+  transition: 0.3s;
+  color: #d8b6a4;
+}
+ul {
+  display: table;
+  margin: 0 auto;
+}
+
+.left-item {
+  backdrop-filter: blur(70px) opacity(1) brightness(1.15);
+  margin: 2.5rem 2rem 2.5rem 2rem;
+  border-radius: 20px;
+}
+
+.left-item > span > p {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: #11324d;
+  /* filter: drop-shadow(0 0 1rem crimson); */
+  text-align: center;
+}
+
+.left-item > span {
+  display: block;
+  padding: 2.5rem 1.75rem 2.5rem 1.75rem;
+}
+.left-item > span > p {
+  margin: 0.3rem 0 0.4rem 0;
+  font-size: 2.5rem;
+}
+
+.left-item > span > span {
+  /* text-align: center; */
+  font-size: 1.75rem;
+  color: #142f43;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+img {
+  width: 500px;
+  height: width;
+  border: 1px solid #1b1717;
+  margin: 0.25rem;
+}
+
+.left-item span .images {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer p {
+  font-size: 1.45rem;
+  color: white;
+}
+
+.navbar {
+  width: 150%;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.navbar a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: #11324d;
+  font-family: "Mochiy Pop P One", sans-serif;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #fbf3e4;
+  transform: translateY(-2px);
+  transition: 0.3s;
+  filter: drop-shadow(0 0 1rem #125c13);
+}
+
+@media only screen and (max-width: 1440px) {
+  .main-container {
+    width: 60%;
+    padding: 10px;
+  }
+  img {
+    width: 350px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .navbar {
+    width: 110%;
+  }
+
+  .navbar a {
+    font-size: 1.4rem;
+  }
+
+  .title-logo {
+    font-size: 3.5rem;
+    color: #630000;
+  }
+
+  .company-logo {
+    font-size: 2.15rem;
+    color: #810000;
+  }
+
+  .main-container {
+    width: 80%;
+    padding: 10px;
+  }
+  .game-video iframe {
+    padding-top: 15px;
+    width: 94%;
+    height: 440px;
+  }
+  .game-video p {
+    padding: 20px;
+  }
+
+  .game-video p button {
+    width: 70%;
+    height: 3rem;
+    border-radius: 50px;
+    font-size: 1.25rem;
+  }
+
+  .left-item {
+    margin: 25px 0px 25px 0px;
+    border-radius: 20px;
+  }
+
+  .left-item > span > p {
+    font-size: 2.5rem;
+  }
+
+  .left-item > span {
+    padding: 1.25rem 1rem 1.25rem 1rem;
+  }
+
+  .left-item > span > p {
+    margin: 0.5rem 0 0.5rem 0;
+  }
+
+  .left-item > span > span {
+    /* text-align: center; */
+    font-size: 1.75rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .navbar {
+    width: 110%;
+  }
+
+  .navbar a {
+    font-size: 1.3rem;
+  }
+
+  img {
+    width: 250px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .navbar {
+    display: none;
+  }
+
+  .main-container {
+    width: 100%;
+    padding: 5px 2px 5px 2px;
+  }
+
+  .logo {
+    padding: 0.5rem 0 0.5rem 0;
+  }
+
+  .title-logo {
+    font-size: 2.5rem;
+  }
+
+  .company-logo {
+    font-size: 1.15rem;
+  }
+
+  .game-video iframe {
+    padding-top: 5px;
+    width: 97%;
+    height: 250px;
+  }
+  .game-video p {
+    padding: 10px;
+  }
+
+  .game-video p button {
+    width: 70%;
+    height: 3rem;
+    border-radius: 50px;
+    font-size: 1.25rem;
+  }
+
+  .left-item {
+    margin: 15px 0px 15px 0px;
+    border-radius: 10px;
+  }
+
+  .left-item > span > p {
+    font-size: 2rem;
+  }
+
+  .left-item > span {
+    padding: 1rem 0.75rem 1rem 0.75rem;
+  }
+
+  .left-item > span > p {
+    margin: 0.3rem 0 0.4rem 0;
+  }
+
+  .left-item > span > span {
+    /* text-align: center; */
+    font-size: 1.5rem;
+  }
+}
