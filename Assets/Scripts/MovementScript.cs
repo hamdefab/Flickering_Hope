@@ -7,6 +7,7 @@ public class MovementScript : MonoBehaviour
 {
     [SerializeField] private float runSpeed = 10f;
     [SerializeField] private float jumpSpeed = 25f;
+    [SerializeField] Vector2 knockback = new Vector2(100f, 10f);
 
     public int maxHealth = 100;
     public int currentHealth;
@@ -14,27 +15,31 @@ public class MovementScript : MonoBehaviour
     public HealthBar healthbar;
 
     Vector2 moveInput;
-    Rigidbody2D myRididbody;
+    Rigidbody2D myRigidbody;
     Animator myAnimator;
     CapsuleCollider2D myBodyCollider;
     BoxCollider2D myFeetCollider;
 
+    bool isAlive;
+
     void Start()
     {
-        myRididbody = GetComponent<Rigidbody2D>();
+        myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         myBodyCollider = GetComponent<CapsuleCollider2D>();
         myFeetCollider = GetComponent<BoxCollider2D>();
 
         healthbar.SetMaxHealth(maxHealth);
+        isAlive = true;
     }
 
     void Update()
     {
+        if (!isAlive) { return; }
         Run();
         Jump();
         FlipSprite();
-
+        // TakeDamage();
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
         //    currentHealth -= 20;
@@ -44,25 +49,24 @@ public class MovementScript : MonoBehaviour
 
     void OnMove(InputValue value) 
     {
+        if (!isAlive) { return; }
         moveInput = value.Get<Vector2>();
     }
 
     void OnJump(InputValue value) 
     {
-        if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) 
-        {
-            return;
-        }
+        if (!isAlive) { return; }
+        if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
         if (value.isPressed)
         {
-            myRididbody.velocity += new Vector2(0f, jumpSpeed);
+            myRigidbody.velocity += new Vector2(0f, jumpSpeed);
         }
     }
 
     void Run()
     {
-        Vector2 playerVelocity = new Vector2(moveInput.x * runSpeed, myRididbody.velocity.y);
-        myRididbody.velocity = playerVelocity;
+        Vector2 playerVelocity = new Vector2(moveInput.x * runSpeed, myRigidbody.velocity.y);
+        myRigidbody.velocity = playerVelocity;
 
         myAnimator.SetBool("isRunning", playerHasHorizontalSpeed());
     }
@@ -77,18 +81,32 @@ public class MovementScript : MonoBehaviour
         if (playerHasHorizontalSpeed()) {
             float xScale = Mathf.Abs(transform.localScale.x);
             float yScale = Mathf.Abs(transform.localScale.y);
-            transform.localScale = new Vector2(Mathf.Sign(myRididbody.velocity.x) * xScale, yScale);
+            transform.localScale = new Vector2(Mathf.Sign(myRigidbody.velocity.x) * xScale, yScale);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.gameObject.layer == LayerMask.NameToLayer("Enemies")) 
+        {
+            currentHealth -= 20;
+            healthbar.SetHealth(currentHealth);
+        }
+        if (currentHealth <= 0 && isAlive)
+        {
+            isAlive = false;
+            myAnimator.SetTrigger("Dying");
         }
     }
 
     bool playerHasHorizontalSpeed()
     {
-        return Mathf.Abs(myRididbody.velocity.x) > Mathf.Epsilon;
+        return Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
     }
 
     bool playerHasVerticalSpeed()
     {
-        return Mathf.Abs(myRididbody.velocity.y) > Mathf.Epsilon;
+        return Mathf.Abs(myRigidbody.velocity.y) > Mathf.Epsilon;
     }
 
 
