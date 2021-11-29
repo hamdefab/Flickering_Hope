@@ -39,23 +39,30 @@ public class MovementScript : MonoBehaviour
         Run();
         Jump();
         FlipSprite();
-        // TakeDamage();
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    currentHealth -= 20;
-        //    healthbar.SetHealth(currentHealth);
-        //}
     }
 
-    void OnMove(InputValue value) 
+    void OnMove(InputValue value)
     {
         if (!isAlive) { return; }
-        moveInput = value.Get<Vector2>();
+        if (myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
+            moveInput = Vector2.zero;
+        }
+        else { moveInput = value.Get<Vector2>(); }
+    }
+
+    void OnAttack(InputValue value)
+    {
+        if (!isAlive || myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) { return; }
+        if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
+        myAnimator.SetTrigger("Attack");
+        moveInput = Vector2.zero;
+
     }
 
     void OnJump(InputValue value) 
     {
-        if (!isAlive) { return; }
+        if (!isAlive || myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) { return; }
         if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
         if (value.isPressed)
         {
