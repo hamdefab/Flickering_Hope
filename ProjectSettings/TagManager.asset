@@ -15,7 +15,7 @@ TagManager:
   - Player
   - Enemies
   - Weapon
-  - 
+  - LevelExit
   - 
   - 
   - 
@@ -46,6 +46,9 @@ TagManager:
     locked: 0
   - name: Platforms
     uniqueID: 1333050259
+    locked: 0
+  - name: LevelExit
+    uniqueID: 4111908703
     locked: 0
   - name: Enemies
     uniqueID: 1733799489
