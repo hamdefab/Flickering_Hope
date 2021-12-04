@@ -111,6 +111,7 @@ public class MovementScript : MonoBehaviour
         {
             currentHealth -= 20;
             healthbar.SetHealth(currentHealth);
+            myAnimator.SetTrigger("Hurt");
         }
         if (currentHealth <= 0 && isAlive)
         {
