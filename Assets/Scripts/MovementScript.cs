@@ -7,6 +7,8 @@ public class MovementScript : MonoBehaviour
 {
     [SerializeField] private float runSpeed = 10f;
     [SerializeField] private float jumpSpeed = 25f;
+    public Transform staff;
+    public Transform projectilePrefab;
     [SerializeField] Vector2 knockback = new Vector2(100f, 10f);
 
     public int maxHealth = 100;
@@ -53,10 +55,21 @@ public class MovementScript : MonoBehaviour
 
     void OnAttack(InputValue value)
     {
-        if (!isAlive || myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) { return; }
-        if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
+        if (!isAlive) { return; }
+        //if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
         myAnimator.SetTrigger("Attack");
+
+        var position = new Vector2(staff.position.x, staff.position.y + 2);
+
+        var mousePos = Mouse.current.position.ReadValue();
+
+        Vector2 shootPos = Camera.main.ScreenToViewportPoint(new Vector3(mousePos.x, mousePos.y, 0.0f));
+        Vector2 shootDir = (mousePos - position).normalized;
+
+        Transform proj = Instantiate(projectilePrefab, position, Quaternion.identity);
         moveInput = Vector2.zero;
+
+        proj.GetComponent<Projectiles>().Setup(shootDir);
 
     }
 

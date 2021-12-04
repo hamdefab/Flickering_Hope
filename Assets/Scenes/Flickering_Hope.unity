@@ -135,13 +135,27 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 138289273, guid: ebea5f8b8163f9a4ab9d9a1b45444e28, type: 3}
+      propertyPath: staff
+      value: 
+      objectReference: {fileID: 1072130235}
+    - target: {fileID: 138289273, guid: ebea5f8b8163f9a4ab9d9a1b45444e28, type: 3}
       propertyPath: healthbar
       value: 
       objectReference: {fileID: 519107164}
     - target: {fileID: 138289273, guid: ebea5f8b8163f9a4ab9d9a1b45444e28, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 2158644471691593474, guid: 21b891323177854499906d55707b1ac7,
+        type: 3}
+    - target: {fileID: 138289273, guid: ebea5f8b8163f9a4ab9d9a1b45444e28, type: 3}
       propertyPath: currentHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 138289273, guid: ebea5f8b8163f9a4ab9d9a1b45444e28, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 2158644471691593474, guid: 21b891323177854499906d55707b1ac7,
+        type: 3}
     - target: {fileID: 3581684743427378859, guid: ebea5f8b8163f9a4ab9d9a1b45444e28,
         type: 3}
       propertyPath: m_Name
@@ -5571,6 +5585,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 138289270}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1072130235 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 324229898543362697, guid: ebea5f8b8163f9a4ab9d9a1b45444e28,
+    type: 3}
+  m_PrefabInstance: {fileID: 138289270}
+  m_PrefabAsset: {fileID: 0}
 --- !u!70 &1072130238
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5727,6 +5747,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1421448203}
   - component: {fileID: 1421448202}
+  - component: {fileID: 1421448204}
   m_Layer: 0
   m_Name: grassy-plane-img
   m_TagString: Untagged
@@ -5799,6 +5820,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1421448204
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421448201}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5776ca741e18a144191db4c6cd8e091f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1497732453
 GameObject:
   m_ObjectHideFlags: 0
