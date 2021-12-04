@@ -57,20 +57,20 @@ public class MovementScript : MonoBehaviour
     {
         if (!isAlive) { return; }
         //if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
-        myAnimator.SetTrigger("Attack");
 
-        var position = new Vector2(staff.position.x, staff.position.y + 2);
+        var position = new Vector3(staff.position.x, staff.position.y, staff.position.z);
 
         var mousePos = Mouse.current.position.ReadValue();
 
-        Vector2 shootPos = Camera.main.ScreenToViewportPoint(new Vector3(mousePos.x, mousePos.y, 0.0f));
-        Vector2 shootDir = (mousePos - position).normalized;
+        Vector3 shootPos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 0.0f));
+        Vector3 shootDir = shootPos - position;
 
-        Transform proj = Instantiate(projectilePrefab, position, Quaternion.identity);
+        var proj = Instantiate(projectilePrefab, position, Quaternion.identity);
+
+        myAnimator.SetTrigger("Attack");
         moveInput = Vector2.zero;
 
         proj.GetComponent<Projectiles>().Setup(shootDir);
-
     }
 
     void OnJump(InputValue value) 

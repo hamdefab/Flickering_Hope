@@ -18,11 +18,15 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         myRigidbody.velocity = new Vector2(moveSpeed, 0f);
+        if (currentHealth <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
-    void OnCollisionStay2D(Collision2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.gameObject.layer == LayerMask.NameToLayer("Weapon") && other.collider.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        if (other.collider.gameObject.layer == LayerMask.NameToLayer("Weapon"))
         {
             currentHealth -= 20;
             healthbar.SetHealth(currentHealth);

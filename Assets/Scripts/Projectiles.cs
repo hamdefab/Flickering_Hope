@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class Projectiles : MonoBehaviour
 {
-    public float shootSpeed = 50f;
+    public Rigidbody2D rb;
+    public float shootSpeed = 5f;
     private Vector3 shootDir;
     public void Setup(Vector3 shootDir)
     {
         this.shootDir = shootDir;
-        Debug.Log(shootDir);
     }
 
     public void Update()
     {
-        transform.position += shootDir * shootSpeed * Time.deltaTime;
+        rb.velocity = new Vector2(shootDir.x, shootDir.y).normalized * shootSpeed;
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Destroy(this.gameObject);
+        //if (other.collider.gameObject.layer == LayerMask.NameToLayer("Enemies"))
+        //{
+            
+        //}
+    }
+
 }
