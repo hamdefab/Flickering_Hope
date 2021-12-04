@@ -14,6 +14,7 @@ body,
 html {
   background-size: contain;
   margin: 0px auto;
+  cursor: url(./res/soggyIcon.png), auto;
 }
 
 .wrapper {
@@ -50,6 +51,15 @@ html {
   /* filter: drop-shadow(0 0 1rem crimson); */
 }
 
+.title-logo span {
+  transition: 3.5s;
+}
+
+.title-logo span:hover {
+  color: yellow;
+  transition: 0.7s;
+}
+
 .company-logo {
   font-size: 3.25rem;
   color: #515e63;
@@ -78,6 +88,8 @@ html {
     #2d1a22,
     #250a0a
   );
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
   color: #eeebdd;
   position: relative;
   width: 70%;
@@ -170,6 +182,20 @@ img {
   filter: drop-shadow(0 0 1rem #125c13);
 }
 
+.contact-ul {
+  margin-top: 0.65rem;
+  list-style-type: none;
+}
+
+.contact-ul > li > a {
+  text-decoration: none;
+  color: #11324d;
+}
+
+.contact-ul > li > a:hover {
+  color: #fbf3e4;
+}
+
 @media only screen and (max-width: 1440px) {
   .main-container {
     width: 60%;
@@ -190,12 +216,10 @@ img {
 
   .title-logo {
     font-size: 3.5rem;
-    color: #630000;
   }
 
   .company-logo {
     font-size: 2.15rem;
-    color: #810000;
   }
 
   .main-container {
