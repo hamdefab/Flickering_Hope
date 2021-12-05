@@ -99,6 +99,7 @@ public class MovementScript : MonoBehaviour
     void OnJump(InputValue value) 
     {
         //if (!isAlive || myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) { return; }
+        if (!isAlive) { return; }
         if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
         if (value.isPressed)
         {
