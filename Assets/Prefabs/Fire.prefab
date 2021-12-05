@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: -4063613374984261500}
-  shootSpeed: 10
+  shootSpeed: 16
 --- !u!50 &-4063613374984261500
 Rigidbody2D:
   serializedVersion: 4

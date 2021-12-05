@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     Rigidbody2D myRigidbody;
 
     public int currentHealth = 100;
+    public int damage = 20;
     public HealthBar healthbar;
 
     void Start()
@@ -28,19 +29,25 @@ public class EnemyMovement : MonoBehaviour
     {
         if (other.collider.gameObject.layer == LayerMask.NameToLayer("Weapon"))
         {
-            currentHealth -= 20;
+            currentHealth -= damage;
             healthbar.SetHealth(currentHealth);
         }
     }
 
     void OnTriggerExit2D(Collider2D other) 
     {
-        moveSpeed = -moveSpeed;
-        FlipEnemyFacing();
+        if (other.gameObject.layer != LayerMask.NameToLayer("Weapon"))
+        {
+            moveSpeed = -moveSpeed;
+            FlipEnemyFacing();
+        }
+        
     }
 
     void FlipEnemyFacing()
     {
-        transform.localScale = new Vector2(-(Mathf.Sign(moveSpeed)), 1f);
+        float xScale = Mathf.Abs(transform.localScale.x);
+        float yScale = Mathf.Abs(transform.localScale.y);
+        transform.localScale = new Vector2(-(Mathf.Sign(moveSpeed)) * xScale, yScale);
     }
 }

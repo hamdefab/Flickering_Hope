@@ -7,6 +7,7 @@ public class MovementScript : MonoBehaviour
 {
     [SerializeField] private float runSpeed = 10f;
     [SerializeField] private float jumpSpeed = 25f;
+    public GameObject spawnPoint;
     public Transform staff;
     public Transform projectilePrefab;
     [SerializeField] Vector2 knockback = new Vector2(100f, 10f);
@@ -43,6 +44,26 @@ public class MovementScript : MonoBehaviour
         FlipSprite();
     }
 
+    void OnGUI()
+    {
+        if (!isAlive)
+        {
+            if (GUI.Button(new Rect(Screen.width * 0.5f - 100f, 400 - 20f, 400f, 100f), "Respawn"))
+                Respawn();
+        }
+    }
+        
+
+    void Respawn()
+    {
+        transform.position = spawnPoint.transform.position;
+        currentHealth = 100;
+        healthbar.SetHealth(currentHealth);
+        myAnimator.SetTrigger("Idle");
+        moveInput = Vector2.zero;
+        isAlive = true;
+    }
+
     void OnMove(InputValue value)
     {
         if (!isAlive) { return; }
@@ -68,14 +89,14 @@ public class MovementScript : MonoBehaviour
         var proj = Instantiate(projectilePrefab, position, Quaternion.identity);
 
         myAnimator.SetTrigger("Attack");
-        moveInput = Vector2.zero;
+        //moveInput = Vector2.zero;
 
         proj.GetComponent<Projectiles>().Setup(shootDir);
     }
 
     void OnJump(InputValue value) 
     {
-        if (!isAlive || myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) { return; }
+        //if (!isAlive || myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) { return; }
         if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
         if (value.isPressed)
         {
@@ -110,6 +131,12 @@ public class MovementScript : MonoBehaviour
         if (other.collider.gameObject.layer == LayerMask.NameToLayer("Enemies")) 
         {
             currentHealth -= 20;
+            healthbar.SetHealth(currentHealth);
+            myAnimator.SetTrigger("Hurt");
+        }
+        if (other.collider.gameObject.layer == LayerMask.NameToLayer("Boss"))
+        {
+            currentHealth -= 80;
             healthbar.SetHealth(currentHealth);
             myAnimator.SetTrigger("Hurt");
         }
