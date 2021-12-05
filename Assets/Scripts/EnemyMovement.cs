@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = -1f;
+    [SerializeField] float moveSpeed = -2f;
     Rigidbody2D myRigidbody;
 
     public int currentHealth = 100;
