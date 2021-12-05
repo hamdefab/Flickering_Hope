@@ -16,6 +16,7 @@ public class MovementScript : MonoBehaviour
     public int currentHealth;
 
     public HealthBar healthbar;
+    public AudioSource ac;
 
     Vector2 moveInput;
     Rigidbody2D myRigidbody;
@@ -32,6 +33,7 @@ public class MovementScript : MonoBehaviour
         myBodyCollider = GetComponent<CapsuleCollider2D>();
         myFeetCollider = GetComponent<BoxCollider2D>();
 
+        ac.volume = VolumeChanger.volume;
         healthbar.SetMaxHealth(maxHealth);
         isAlive = true;
     }
