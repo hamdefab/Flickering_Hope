@@ -13,6 +13,16 @@ public class Projectiles : MonoBehaviour
     public void Setup(Vector3 shootDir)
     {
         this.shootDir = shootDir;
+        // https://www.youtube.com/watch?v=Nke5JKPiQTw&t=303s
+        // how to rotate bullet
+        transform.eulerAngles = new Vector3(0, 0, GetAngleFromVectorFloat(shootDir));
+    }
+
+    public float GetAngleFromVectorFloat(Vector3 dir) {
+        dir = dir.normalized;
+        float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        if (n < 0) n += 360;
+        return n;
     }
 
     public void Update()
