@@ -51,10 +51,6 @@ html {
   /* filter: drop-shadow(0 0 1rem crimson); */
 }
 
-.title-logo span {
-  transition: 3.5s;
-}
-
 .title-logo span:hover {
   color: yellow;
   transition: 0.7s;
