@@ -17,7 +17,7 @@ TagManager:
   - Weapon
   - LevelExit
   - Boss
-  - 
+  - Spikes
   - 
   - 
   - 
@@ -55,4 +55,10 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1403656991
+    locked: 0
+  - name: Spikes
+    uniqueID: 1024980985
+    locked: 0
+  - name: Water
+    uniqueID: 2679080913
     locked: 0

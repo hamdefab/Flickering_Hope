@@ -132,21 +132,35 @@ public class MovementScript : MonoBehaviour
     {
         if (other.collider.gameObject.layer == LayerMask.NameToLayer("Enemies")) 
         {
-            currentHealth -= 20;
-            healthbar.SetHealth(currentHealth);
-            myAnimator.SetTrigger("Hurt");
+            takeDamage(20);
         }
         if (other.collider.gameObject.layer == LayerMask.NameToLayer("Boss"))
         {
-            currentHealth -= 80;
-            healthbar.SetHealth(currentHealth);
-            myAnimator.SetTrigger("Hurt");
+            takeDamage(80);
         }
         if (currentHealth <= 0 && isAlive)
         {
             isAlive = false;
             myAnimator.SetTrigger("Dying");
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Spikes")) 
+        {
+            takeDamage(20);
+        }
+        if (other.gameObject.layer == LayerMask.NameToLayer("Water")) 
+        {
+            takeDamage(maxHealth);
+        }
+    }
+
+    void takeDamage(int damage) 
+    {
+        currentHealth -= damage;
+        healthbar.SetHealth(currentHealth);
+        myAnimator.SetTrigger("Hurt");
     }
 
     bool playerHasHorizontalSpeed()
