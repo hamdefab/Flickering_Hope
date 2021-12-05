@@ -131,6 +131,9 @@ public class MovementScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        if (!isAlive) {
+            return;
+        }
         if (other.collider.gameObject.layer == LayerMask.NameToLayer("Enemies")) 
         {
             takeDamage(20);
@@ -147,6 +150,9 @@ public class MovementScript : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
+        if (!isAlive) {
+            return;
+        }
         if (other.gameObject.layer == LayerMask.NameToLayer("Spikes")) 
         {
             takeDamage(20);
