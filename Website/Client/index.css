@@ -135,6 +135,10 @@ ul {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+.indent {
+  text-indent: 5%;
+}
+
 img {
   width: 500px;
   height: width;
